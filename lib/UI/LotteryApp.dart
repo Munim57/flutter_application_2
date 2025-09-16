@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class LotteryApp extends StatefulWidget {
   const LotteryApp({super.key});
@@ -8,6 +9,7 @@ class LotteryApp extends StatefulWidget {
 }
 
 class _LotteryAppState extends State<LotteryApp> {
+  Random random = Random();
   int x = 0;
 
   @override
@@ -24,26 +26,44 @@ class _LotteryAppState extends State<LotteryApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Center(child: Text('Lottery winnug number is')),
+            Center(child: Text('Lottery winnig number is 4')),
             SizedBox(height: 10),
-            Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Container(
-                height: 250,
 
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.4),
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Icon(Icons.error, size: 50, color: Colors.red),
-                    SizedBox(height: 10),
-                    Text('Better luck next time your number try again'),
-                  ],
-                ),
+            Container(
+              height: x == 4 ? 400 : 250,
+              width: 280,
+
+              decoration: BoxDecoration(
+                color: x == 4 ? Colors.teal : Colors.grey.withOpacity(0.4),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: x == 4
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.done_all, size: 35, color: Colors.green),
+                          SizedBox(height: 15),
+                          Text(
+                            ' Congratulations! your number $x\n you won the Lottery',
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      )
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(Icons.error, size: 35, color: Colors.red),
+                          SizedBox(height: 15),
+                          Text(
+                            'Better luck next time your number $x\n try again',
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
               ),
             ),
           ],
@@ -51,11 +71,13 @@ class _LotteryAppState extends State<LotteryApp> {
 
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print('Tap');
+            x = random.nextInt(6);
+            print('$x');
+            setState(() {});
           },
-          child: Icon(Icons.refresh),
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
+          child: Icon(Icons.refresh),
         ),
       ),
     );
