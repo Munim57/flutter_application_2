@@ -71,7 +71,7 @@ class _LotteryAppState extends State<LotteryApp> {
 
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            x = random.nextInt(100);
+            x = random.nextInt(10);
             print('$x');
             setState(() {});
           },
