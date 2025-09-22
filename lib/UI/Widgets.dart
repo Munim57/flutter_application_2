@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ContainerApp extends StatelessWidget {
   const ContainerApp({super.key});
@@ -15,12 +16,115 @@ class ContainerApp extends StatelessWidget {
           // column use for vertical alignment and row use for horizantel alignment
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [RichText(text: TextSpan())],
+          children: [],
         ),
       ),
     );
   }
 }
+
+
+///////////////////////////////////////////////////////////////////////////
+//ListTile and ListView.builder widgets
+
+// Expanded(
+//               child: ListView.builder(
+//                 itemCount: 100,
+//                 itemBuilder: (context, index) {
+//                   return ListTile(
+//                     leading: CircleAvatar(
+//                       backgroundColor: Colors.black,
+//                       backgroundImage: NetworkImage(
+//                         'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg',
+//                       ),
+//                     ),
+//                     title: Text('Abdul Munim'),
+//                     subtitle: Text('Thank You G...!'),
+//                     trailing: Text('3:40 PM'),
+//                   );
+//                 },
+//               ),
+//             ),
+
+///////////////////////////////////////////////////////////////////////
+//TextFormField Widget
+
+// Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: TextFormField(
+//                 keyboardType: TextInputType.phone,
+//                 cursorColor: Colors.black,
+//                 enabled: true,
+//                 style: TextStyle(color: Colors.black, fontSize: 18),
+//                 decoration: InputDecoration(
+//                   filled: true,
+//                   fillColor: Colors.grey.withOpacity(0.2),
+//                   prefixIcon: Icon(Icons.email),
+//                   hintText: 'Email',
+//                   labelText: 'Email',
+//                   hintStyle: TextStyle(
+//                     color: Colors.grey.shade600,
+//                     fontSize: 14,
+//                   ),
+//                   enabledBorder: OutlineInputBorder(
+//                     borderSide: BorderSide(color: Colors.black, width: 1),
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                   errorBorder: OutlineInputBorder(
+//                     borderSide: BorderSide(color: Colors.red, width: 1),
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                  
+//                   focusedBorder: OutlineInputBorder(
+//                     borderSide: BorderSide(color: Colors.green, width: 1),
+//                     borderRadius: BorderRadius.circular(10),
+//                   ), focusedErrorBorder: OutlineInputBorder(
+//                     borderSide: BorderSide(color: Colors.red, width: 1),
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                 ),
+//                 onChanged: (value) {
+//                   print(value);
+//                 },
+//               ),
+//             ),
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////// 
+
+// RichText Widget
+
+//  Center(
+//               child: RichText( 
+//                 text: TextSpan(
+//                   text: 'Dont have an account?  ',
+//                   style: Theme.of(context).textTheme.bodyMedium,
+//                   children: [
+//                     TextSpan(
+//                       text: 'Sign up',
+//                       style: TextStyle(
+//                         decoration: TextDecoration.underline,
+//                         fontSize: 20,
+//                         fontWeight: FontWeight.bold,
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
