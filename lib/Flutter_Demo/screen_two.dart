@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
+import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
 
-class HomeScreen extends StatefulWidget {
-  static const String id = 'HomeScreen';
-  const HomeScreen({super.key});
+class ScreenTwo extends StatefulWidget {
+  static const String id = 'ScreenTwo';
+  const ScreenTwo({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ScreenTwo> createState() => _ScreenTwoState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ScreenTwoState extends State<ScreenTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,13 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Center(
             child: TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, ScreenTwo.id);
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => ScreenTwo()),
-                // );
+                Navigator.pushNamed(context, ScreenThree.id);
               },
-              child: Text('Screen 1'),
+              child: Text('Screen 2'),
             ),
           ),
         ],

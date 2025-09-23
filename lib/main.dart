@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
 import 'package:flutter_application_1/Flutter_Demo/home_screen.dart';
+import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
 import 'package:flutter_application_1/UI/LotteryApp.dart';
 
 import 'package:flutter_application_1/UI/Widgets.dart';
@@ -19,7 +21,13 @@ class start extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomeScreen(),
+      initialRoute: HomeScreen.id,
+      routes: {
+        HomeScreen.id: (context) => HomeScreen(),
+        ScreenTwo.id: (context) => ScreenTwo(),
+        ScreenThree.id: (context) => ScreenThree(),
+      },
+      // home: ScreenThree(),
     );
   }
 }
