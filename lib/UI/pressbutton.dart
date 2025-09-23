@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class ButtonApp extends StatefulWidget {
+  const ButtonApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<ButtonApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<ButtonApp> {
   int x = 0;
   @override
   Widget build(BuildContext context) {
