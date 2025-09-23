@@ -16,7 +16,26 @@ class ContainerApp extends StatelessWidget {
           // column use for vertical alignment and row use for horizantel alignment
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [],
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: 100,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    leading: CircleAvatar(
+                      backgroundColor: Colors.grey,
+                      backgroundImage: NetworkImage(
+                        'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg',
+                      ),
+                    ),
+                    title: Text('Lora'),
+                    subtitle: Text('Good Morning.....!'),
+                    trailing: Text('07:15 AM'),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -38,7 +57,7 @@ class ContainerApp extends StatelessWidget {
 //                         'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg',
 //                       ),
 //                     ),
-//                     title: Text('Abdul Munim'),
+//                     title: Text('Lora'),
 //                     subtitle: Text('Thank You G...!'),
 //                     trailing: Text('3:40 PM'),
 //                   );
