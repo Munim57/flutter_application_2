@@ -62,6 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.pushNamed(context, ScreenThree.id);
               },
             ),
+            ListTile(
+              leading: Icon(Icons.login_outlined),
+              title: Text('Logout'),
+            ),
           ],
         ),
       ),
