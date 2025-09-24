@@ -20,12 +20,19 @@ class _ScreenThreeState extends State<ScreenThree> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: TextButton(
-              onPressed: () {
-                Navigator.pop(context);
+          Expanded(
+            child: ListView.builder(
+              itemCount: 100,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assets/spider.jpg'),
+                  ),
+                  title: Text('Jams'),
+                  subtitle: Text('Good Mornig...!'),
+                  trailing: Text('7:10 AM'),
+                );
               },
-              child: Text('Screen 3'),
             ),
           ),
         ],

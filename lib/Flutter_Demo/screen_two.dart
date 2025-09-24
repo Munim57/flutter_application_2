@@ -21,14 +21,15 @@ class _ScreenTwoState extends State<ScreenTwo> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, ScreenThree.id);
-              },
-              child: Text('Screen 2'),
-            ),
-          ),
+          Center(child: Text('Screen Two', style: TextStyle(fontSize: 50))),
+          // Center(
+          //   child: TextButton(
+          //     onPressed: () {
+          //       Navigator.pushNamed(context, ScreenThree.id);
+          //     },
+          //     child: Text('Screen 2'),
+          //   ),
+          // ),
         ],
       ),
     );
