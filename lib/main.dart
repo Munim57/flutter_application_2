@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Flutter_Demo/Screen_Last.dart';
 import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
 import 'package:flutter_application_1/Flutter_Demo/home_screen.dart';
 import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
@@ -26,8 +27,9 @@ class start extends StatelessWidget {
         HomeScreen.id: (context) => HomeScreen(),
         ScreenTwo.id: (context) => ScreenTwo(),
         ScreenThree.id: (context) => ScreenThree(),
+        ScreenLast.id: (context) => ScreenLast(),
       },
-      // home: ScreenThree(),
+      // home: ScreenLast(),
     );
   }
 }

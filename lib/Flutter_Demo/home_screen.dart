@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Flutter_Demo/Screen_Last.dart';
 import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
 import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
 
@@ -49,8 +50,8 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.calendar_month_outlined),
-              title: Text('Page 2'),
+              leading: Icon(Icons.wifi_calling_3),
+              title: Text('Calls '),
               onTap: () {
                 Navigator.pushNamed(context, ScreenTwo.id);
               },
@@ -63,9 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.login_outlined),
-              title: Text('Logout'),
+              leading: Icon(Icons.image),
+              title: Text('Images'),
+              onTap: () {
+                Navigator.pushNamed(context, ScreenLast.id);
+              },
             ),
+            ListTile(leading: Icon(Icons.logout), title: Text('Logout')),
           ],
         ),
       ),
@@ -73,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(child: Text('Screen One', style: TextStyle(fontSize: 50))),
+          Center(child: Text('No Page Found', style: TextStyle(fontSize: 14))),
           // Center(
           //   child: TextButton(
           //     onPressed: () {
