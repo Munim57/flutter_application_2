@@ -4,8 +4,8 @@ import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
 import 'package:flutter_application_1/Flutter_Demo/home_screen.dart';
 import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
 import 'package:flutter_application_1/UI/LotteryApp.dart';
-
 import 'package:flutter_application_1/UI/Widgets.dart';
+
 import 'package:flutter_application_1/UI/praxtice.dart';
 import 'package:flutter_application_1/UI/pressbutton.dart';
 
@@ -20,16 +20,18 @@ class start extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: HomeScreen.id,
-      routes: {
-        HomeScreen.id: (context) => HomeScreen(),
-        ScreenTwo.id: (context) => ScreenTwo(),
-        ScreenThree.id: (context) => ScreenThree(),
-        ScreenLast.id: (context) => ScreenLast(),
-      },
-      // home: ScreenLast(),
+
+      // routes: {
+      //   HomeScreen.id: (context) => HomeScreen(),
+      //   ScreenTwo.id: (context) => ScreenTwo(),
+      //   ScreenThree.id: (context) => ScreenThree(),
+      //   ScreenLast.id: (context) => ScreenLast(),
+      // },
+      home: Widgetsapp(),
     );
   }
 }

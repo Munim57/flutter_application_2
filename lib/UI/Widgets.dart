@@ -1,46 +1,160 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-class ContainerApp extends StatelessWidget {
-  const ContainerApp({super.key});
+class Widgetsapp extends StatefulWidget {
+  const Widgetsapp({super.key});
 
   @override
+  State<Widgetsapp> createState() => _WidgetsappState();
+}
+
+class _WidgetsappState extends State<Widgetsapp> {
+  bool ishiddenpassword = true;
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Center(child: Text('Top Widgets Explanations')),
-        ),
-        body: Column(
-          // column use for vertical alignment and row use for horizantel alignment
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: ListView.builder(
-                itemCount: 100,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Colors.grey,
-                      backgroundImage: NetworkImage(
-                        'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg',
-                      ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Center(child: Text('WidgetsApp')),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Center(
+              child: TextFormField(
+                cursorColor: Colors.red,
+                keyboardType: TextInputType.emailAddress,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: 'Email Address',
+                  hintStyle: TextStyle(color: Colors.black),
+                  label: Text(
+                    'Email',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
                     ),
-                    title: Text('Lora'),
-                    subtitle: Text('Good Morning.....!'),
-                    trailing: Text('07:15 AM'),
-                  );
-                },
+                  ),
+                  prefixIcon: Icon(Icons.email_outlined),
+                  fillColor: Colors.grey,
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.blue),
+                  ),
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+          SizedBox(height: 1),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Center(
+              child: TextField(
+                obscureText: ishiddenpassword,
+                cursorColor: Colors.red,
+                keyboardType: TextInputType.visiblePassword,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  label: Text(
+                    'Password',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  hintStyle: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  fillColor: Colors.grey,
+                  filled: true,
+                  prefixIcon: Icon(Icons.lock_outline_sharp),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      ishiddenpassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                    onPressed: () {
+                      ishiddenpassword = !ishiddenpassword;
+                      setState(() {});
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
+    ;
   }
 }
+
+
+/////////////////////////////////////////////////////////////////////////
+//textformfield Visable and Hide Password
+
+// Padding(
+//             padding: const EdgeInsets.all(10),
+//             child: Center(
+//               child: TextField(
+//                 obscureText: ishiddenpassword,
+//                 cursorColor: Colors.red,
+//                 keyboardType: TextInputType.visiblePassword,
+//                 style: TextStyle(color: Colors.white),
+//                 decoration: InputDecoration(
+//                   hintText: 'Password',
+//                   label: Text(
+//                     'Password',
+//                     style: TextStyle(color: Colors.black),
+//                   ),
+//                   hintStyle: TextStyle(
+//                     color: Colors.black,
+//                     fontSize: 16,
+//                     fontWeight: FontWeight.w400,
+//                   ),
+//                   fillColor: Colors.grey,
+//                   filled: true,
+//                   prefixIcon: Icon(Icons.lock_outline_sharp),
+//                   enabledBorder: OutlineInputBorder(
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                   focusedBorder: OutlineInputBorder(
+//                     borderSide: BorderSide(color: Colors.blue),
+//                     borderRadius: BorderRadius.circular(10),
+//                   ),
+//                   suffixIcon: IconButton(
+//                     icon: Icon(
+//                       ishiddenpassword
+//                           ? Icons.visibility_off
+//                           : Icons.visibility,
+//                     ),
+//                     onPressed: () {
+//                       ishiddenpassword = !ishiddenpassword;
+//                       setState(() {});
+//                     },
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ),
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////
