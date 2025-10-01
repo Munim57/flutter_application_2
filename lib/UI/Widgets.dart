@@ -101,7 +101,6 @@ class _WidgetsappState extends State<Widgetsapp> {
         ],
       ),
     );
-    ;
   }
 }
 
