@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Flutter_Demo/Screen_Last.dart';
-import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
-import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/Screen_Last.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/Screen_three.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/screen_two.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id = 'HomeScreen';

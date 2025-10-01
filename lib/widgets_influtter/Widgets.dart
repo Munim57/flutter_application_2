@@ -104,6 +104,67 @@ class _WidgetsappState extends State<Widgetsapp> {
   }
 }
 
+////////////////////////////////////////////////////////////////////////
+
+//Drawer  //we use it in appBar before body 
+
+  //  drawer: Drawer(
+  //       child: ListView(
+  //         padding: EdgeInsets.zero,
+  //         children: [
+  //           // DrawerHeader(child: Text('Munim')),
+  //           UserAccountsDrawerHeader(
+  //             decoration: BoxDecoration(color: Color(0xff764abc)),
+  //             currentAccountPicture:
+  //                 // Image(
+  //                 //   image: NetworkImage(
+  //                 //     'https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg',
+  //                 //   ),
+  //                 // ),
+  //                 CircleAvatar(
+  //                   backgroundColor: Colors.blueGrey,
+  //                   // backgroundImage: AssetImage('assets/spider.jpg'),
+  //                   backgroundImage: NetworkImage(
+  //                     'https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg',
+  //                   ),
+  //                 ),
+  //             accountName: Text('Abdul Munim'),
+  //             accountEmail: Text('muxi13@gmail.com'),
+  //           ),
+  //           ListTile(
+  //             leading: Icon(Icons.home),
+  //             title: Text('Page 1'),
+  //             onTap: () {
+  //               Navigator.pushNamed(context, HomeScreen.id);
+  //             },
+  //           ),
+  //           ListTile(
+  //             leading: Icon(Icons.wifi_calling_3),
+  //             title: Text('Calls '),
+  //             onTap: () {
+  //               Navigator.pushNamed(context, ScreenTwo.id);
+  //             },
+  //           ),
+  //           ListTile(
+  //             leading: Icon(Icons.chat),
+  //             title: Text('Chats'),
+  //             onTap: () {
+  //               Navigator.pushNamed(context, ScreenThree.id);
+  //             },
+  //           ),
+  //           ListTile(
+  //             leading: Icon(Icons.image),
+  //             title: Text('Images'),
+  //             onTap: () {
+  //               Navigator.pushNamed(context, ScreenLast.id);
+  //             },
+  //           ),
+  //           ListTile(leading: Icon(Icons.logout), title: Text('Logout')),
+  //         ],
+  //       ),
+  //     ),
+
+
 
 /////////////////////////////////////////////////////////////////////////
 //textformfield Visable and Hide Password

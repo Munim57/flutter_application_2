@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Flutter_Demo/Screen_Last.dart';
-import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
-import 'package:flutter_application_1/Flutter_Demo/home_screen.dart';
-import 'package:flutter_application_1/Flutter_Demo/screen_two.dart';
-import 'package:flutter_application_1/UI/LotteryApp.dart';
-import 'package:flutter_application_1/UI/Widgets.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/Screen_Last.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/Screen_three.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/home_screen.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/screen_two.dart';
+import 'package:flutter_application_1/lottery_app/LotteryApp.dart';
+import 'package:flutter_application_1/widgets_influtter/Widgets.dart';
 
-import 'package:flutter_application_1/UI/praxtice.dart';
-import 'package:flutter_application_1/UI/pressbutton.dart';
+import 'package:flutter_application_1/Practice_flutter/praxtice.dart';
+import 'package:flutter_application_1/press_button/pressbutton.dart';
 
 void main() {
   runApp(start());

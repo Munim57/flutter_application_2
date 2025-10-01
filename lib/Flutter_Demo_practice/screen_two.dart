@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Flutter_Demo/Screen_three.dart';
+import 'package:flutter_application_1/Flutter_Demo_practice/Screen_three.dart';
 
 class ScreenTwo extends StatefulWidget {
   static const String id = 'ScreenTwo';
