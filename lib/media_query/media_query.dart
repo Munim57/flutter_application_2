@@ -18,15 +18,23 @@ class _MediaqueryState extends State<Mediaquery> {
     double width = MediaQuery.of(context).size.width;
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.blue,
           title: Center(child: Text('Media Query')),
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Height ${height.toString()}'),
-              Text('Width ${width.toString()}'),
+              Text(
+                'Height ${height.toString()}',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+              Text(
+                'Width ${width.toString()}',
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
             ],
           ),
         ),
