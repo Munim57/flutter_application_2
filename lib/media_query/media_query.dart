@@ -40,6 +40,5 @@ class _MediaqueryState extends State<Mediaquery> {
         ),
       ),
     );
-    ;
   }
 }
