@@ -10,6 +10,49 @@ class Validationform extends StatefulWidget {
 class _ValidationformState extends State<Validationform> {
   bool ishiddenpassword = true;
   bool ishidden = true;
+  //Name validation
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  void _sginupForm() {
+    if (_formkey.currentState!.validate()) {}
+  }
+
+  //email validation
+  String? _validateEmail(value) {
+    if (value!.isEmpty) {
+      return 'Please enter an email';
+    }
+    RegExp emailRegex = RegExp(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+    );
+    if (!emailRegex.hasMatch(value)) {
+      return 'Please enter a valid email';
+    }
+    return null;
+  }
+
+  //password validation
+  String? _validatePassword(value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter a password.';
+    }
+    if (value.length < 8) {
+      return 'Password must be at least 8 characters long.';
+    }
+    if (!RegExp(r'[A-Z]').hasMatch(value)) {
+      return 'Password must contain at least one uppercase letter.';
+    }
+    if (!RegExp(r'[a-z]').hasMatch(value)) {
+      return 'Password must contain at least one lowercase letter.';
+    }
+    if (!RegExp(r'[0-9]').hasMatch(value)) {
+      return 'Password must contain at least one digit.';
+    }
+    if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
+      return 'Password must contain at least one special character.';
+    }
+    return null; // Return null if the password is valid
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +63,15 @@ class _ValidationformState extends State<Validationform> {
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Form(
-          child: Padding(
-            padding: EdgeInsetsGeometry.all(12),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formkey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 0),
                 Text(
                   'Create Account',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
@@ -39,9 +83,10 @@ class _ValidationformState extends State<Validationform> {
                 ),
                 SizedBox(height: 10),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
-                    hintText: 'Enter Your Name',
+                    hintText: 'Username',
                     prefixIcon: Icon(Icons.person),
                     fillColor: Colors.black12,
                     filled: true,
@@ -62,10 +107,16 @@ class _ValidationformState extends State<Validationform> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  validator: (value) {},
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter a username';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(height: 10),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: 'Email Address',
@@ -89,10 +140,11 @@ class _ValidationformState extends State<Validationform> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  validator: (value) {},
+                  validator: _validateEmail,
                 ),
                 SizedBox(height: 10),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   obscureText: ishiddenpassword,
                   autocorrect: true,
                   keyboardType: TextInputType.visiblePassword,
@@ -129,10 +181,11 @@ class _ValidationformState extends State<Validationform> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  validator: (value) {},
+                  validator: _validatePassword,
                 ),
                 SizedBox(height: 10),
                 TextFormField(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   obscureText: ishidden,
                   autocorrect: true,
                   keyboardType: TextInputType.visiblePassword,
@@ -169,11 +222,11 @@ class _ValidationformState extends State<Validationform> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  validator: (value) {},
+                  validator: _validatePassword,
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: _sginupForm,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),
