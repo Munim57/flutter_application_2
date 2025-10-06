@@ -5,6 +5,7 @@ import 'package:flutter_application_1/Flutter_Demo_practice/home_screen.dart';
 import 'package:flutter_application_1/Flutter_Demo_practice/screen_two.dart';
 import 'package:flutter_application_1/componets_influtter/components.dart';
 import 'package:flutter_application_1/lottery_app/LotteryApp.dart';
+import 'package:flutter_application_1/validation_form_flutter/Validation.dart';
 import 'package:flutter_application_1/widgets_influtter/Widgets.dart';
 
 import 'package:flutter_application_1/Practice_flutter/praxtice.dart';
@@ -32,7 +33,7 @@ class start extends StatelessWidget {
       //   ScreenThree.id: (context) => ScreenThree(),
       //   ScreenLast.id: (context) => ScreenLast(),
       // },
-      home: Components(),
+      home: Validationform(),
     );
   }
 }
