@@ -219,22 +219,17 @@
 
 
   ////////////////////////////////////////////////////////////////////
-   //validation of Sign up
-  // void _signupform() {
+  //validation of sign up
+  //  void _signupform() {
   //   if (_formkey.currentState!.validate()) {
   //     ScaffoldMessenger.of(context).showSnackBar(
   //       const SnackBar(content: Text('✅ Password Matched Successfully!')),
   //     );
+  //     Navigator.pushNamed(context, Signup2screen.id);
+  //   } else {
+  //     // ❌ Some fields invalid → show message
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text("Please correct all fields")),
+  //     );
   //   }
-  //   setState(() {
-  //     if (_formkey.currentState!.validate()) {
-  //       // ✅ All fields valid → go to next page
-  //       Navigator.pushNamed(context, Signup2screen.id);
-  //     } else {
-  //       // ❌ Some fields invalid → show message
-  //       ScaffoldMessenger.of(context).showSnackBar(
-  //         const SnackBar(content: Text("Please correct all fields")),
-  //       );
-  //     }
-  //   });
   // }
