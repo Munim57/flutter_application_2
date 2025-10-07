@@ -1,3 +1,13 @@
+// validations form key declear
+
+
+// final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+//   void _sginupForm() {
+//     if (_formkey.currentState!.validate()) {}
+//   }
+
+
+
 //Number Validations conditions
 
 // String _validatenumber(value) {
@@ -64,3 +74,4 @@
     //                 }
     //                 return null;
     //               },
+
