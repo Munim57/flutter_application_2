@@ -219,7 +219,16 @@
 
 
   ////////////////////////////////////////////////////////////////////
-  //validation of sign up
+  //validation of sign up and connect with sign up and shift net page
+//Navigator.pushNamed(context, Signup2screen.id);
+  //    else {
+  //     // ❌ Some fields invalid → show message
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text("Please correct all fields")),
+  //     );
+  //   
+  // after
+
   //  void _signupform() {
   //   if (_formkey.currentState!.validate()) {
   //     ScaffoldMessenger.of(context).showSnackBar(
@@ -250,7 +259,7 @@
     // }
 
 
-
+//after
 
   // void _signupform() {
   //   if (!ischeckbox) {
