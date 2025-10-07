@@ -233,3 +233,44 @@
   //     );
   //   }
   // }
+
+  ///////////////////////////////////////////////////////////
+  //checkbox coditions and terms
+   //validation of Sign up
+
+    // if (!ischeckbox) {
+    //   // ⚠️ If checkbox not ticked
+    //   ScaffoldMessenger.of(context).showSnackBar(
+    //     const SnackBar(
+    //       content: Text("Please agree to the Terms & Conditions first."),
+    //       backgroundColor: Colors.red,
+    //     ),
+    //   );
+    //   return; // stop here
+    // }
+
+
+
+
+  // void _signupform() {
+  //   if (!ischeckbox) {
+  //     // ⚠️ If checkbox not ticked
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(
+  //         content: Text("Please agree to the Terms & Conditions first."),
+  //         backgroundColor: Colors.red,
+  //       ),
+  //     );
+  //     return; // stop here
+  //   }
+  //   if (_formkey.currentState!.validate()) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text('✅ Password Matched Successfully!')),
+  //     );
+  //     Navigator.pushNamed(context, Signup2screen.id);
+  //   } else {
+  //     // ❌ Some fields invalid → show message
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text("Please correct all fields")),
+  //     );
+  //   }
