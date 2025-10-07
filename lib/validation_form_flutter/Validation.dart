@@ -11,7 +11,7 @@ class _ValidationformState extends State<Validationform> {
   bool ishiddenpassword = true;
   bool ishidden = true;
 
-  //Name validation
+  //validation that connect with name or pass or email
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   void _sginupForm() {
     if (_formkey.currentState!.validate()) {

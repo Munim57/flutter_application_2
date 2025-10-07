@@ -107,7 +107,7 @@
 
 
 
-// validations form key declear
+// validations form key declear or //validation that connect with name or pass or email
 
 
 // final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
