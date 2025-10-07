@@ -10,10 +10,15 @@ class Validationform extends StatefulWidget {
 class _ValidationformState extends State<Validationform> {
   bool ishiddenpassword = true;
   bool ishidden = true;
+
   //Name validation
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   void _sginupForm() {
-    if (_formkey.currentState!.validate()) {}
+    if (_formkey.currentState!.validate()) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('✅ Password Matched Successfully!')),
+      );
+    }
   }
 
   //email validation
@@ -29,6 +34,12 @@ class _ValidationformState extends State<Validationform> {
     }
     return null;
   }
+
+  //validate password and confirm password
+
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   //password validation
   String? _validatePassword(value) {
@@ -51,6 +62,17 @@ class _ValidationformState extends State<Validationform> {
       return 'Password must contain at least one special character.';
     }
     return null; // Return null if the password is valid
+  }
+
+  //confirm password validator
+  String? _validateConfirmpassword(value) {
+    if (value == null || value.isEmpty) {
+      return 'Please confirm password';
+    }
+    if (value != _passwordController.text) {
+      return 'Passwords do not match';
+    }
+    return null;
   }
 
   @override
@@ -144,6 +166,7 @@ class _ValidationformState extends State<Validationform> {
                 ),
                 SizedBox(height: 10),
                 TextFormField(
+                  controller: _passwordController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   obscureText: ishiddenpassword,
                   autocorrect: true,
@@ -185,6 +208,7 @@ class _ValidationformState extends State<Validationform> {
                 ),
                 SizedBox(height: 10),
                 TextFormField(
+                  controller: _confirmPasswordController,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   obscureText: ishidden,
                   autocorrect: true,
@@ -222,7 +246,7 @@ class _ValidationformState extends State<Validationform> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  validator: _validatePassword,
+                  validator: _validateConfirmpassword,
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(

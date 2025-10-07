@@ -1,3 +1,112 @@
+//password and confirm password validation
+
+
+
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(
+//     const MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: PasswordValidationScreen(),
+//     ),
+//   );
+// }
+
+// class PasswordValidationScreen extends StatefulWidget {
+//   const PasswordValidationScreen({super.key});
+
+//   @override
+//   State<PasswordValidationScreen> createState() =>
+//       _PasswordValidationScreenState();
+// }
+
+// class _PasswordValidationScreenState extends State<PasswordValidationScreen> {
+//   final _formKey = GlobalKey<FormState>();
+
+//   final TextEditingController _passwordController = TextEditingController();
+//   final TextEditingController _confirmPasswordController =
+//       TextEditingController();
+
+//   void _submitForm() {
+//     if (_formKey.currentState!.validate()) {
+//       ScaffoldMessenger.of(context).showSnackBar(
+//         const SnackBar(content: Text('✅ Password Matched Successfully!')),
+//       );
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text("Password Validation Example")),
+//       body: Padding(
+//         padding: const EdgeInsets.all(20),
+//         child: Form(
+//           key: _formKey,
+//           child: Column(
+//             children: [
+//               TextFormField(
+//                 controller: _passwordController,
+//                 obscureText: true,
+//                 decoration: const InputDecoration(
+//                   labelText: 'Password',
+//                   border: OutlineInputBorder(),
+//                 ),
+//                 validator: (value) {
+//                   if (value == null || value.isEmpty) {
+//                     return 'Please enter password';
+//                   }
+//                   if (value.length < 6) {
+//                     return 'Password must be at least 6 characters';
+//                   }
+//                   if (!RegExp(
+//                     r'^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$&*~]).{6,}$',
+//                   ).hasMatch(value)) {
+//                     return 'Use at least 1 capital, 1 number, 1 special char';
+//                   }
+//                   return null;
+//                 },
+//               ),
+//               const SizedBox(height: 20),
+//               TextFormField(
+//                 controller: _confirmPasswordController,
+//                 obscureText: true,
+//                 decoration: const InputDecoration(
+//                   labelText: 'Confirm Password',
+//                   border: OutlineInputBorder(),
+//                 ),
+//                 validator: (value) {
+//                   if (value == null || value.isEmpty) {
+//                     return 'Please confirm password';
+//                   }
+//                   if (value != _passwordController.text) {
+//                     return 'Passwords do not match';
+//                   }
+//                   return null;
+//                 },
+//               ),
+//               const SizedBox(height: 30),
+//               ElevatedButton(
+//                 onPressed: _submitForm,
+//                 style: ElevatedButton.styleFrom(
+//                   minimumSize: const Size(double.infinity, 50),
+//                 ),
+//                 child: const Text("Submit"),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+
+
+
+
 // validations form key declear
 
 
