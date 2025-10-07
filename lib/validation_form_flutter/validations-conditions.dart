@@ -149,6 +149,12 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
+//in stf
+  // final TextEditingController _passwordController = TextEditingController();
+  // final TextEditingController _confirmPasswordController =
+  //     TextEditingController();
+
+
   //password validation
   // String? _validatePassword(value) {
   //   if (value == null || value.isEmpty) {
@@ -173,6 +179,17 @@
   // }
 
 
+  //confirm password validator
+  // String? _validateConfirmpassword(value) {
+  //   if (value == null || value.isEmpty) {
+  //     return 'Please confirm password';
+  //   }
+  //   if (value != _passwordController.text) {
+  //     return 'Passwords do not match';
+  //   }
+  //   return null;
+  // }
+
 
   /////////////////////////////////////////////////////////////////
   //validtion conditons for Name
@@ -184,3 +201,17 @@
     //                 return null;
     //               },
 
+
+
+
+
+
+//////////////////////////////////////////////////////
+// final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+  // void _sginupForm() {
+  //   if (_formkey.currentState!.validate()) {
+  //     ScaffoldMessenger.of(context).showSnackBar(
+  //       const SnackBar(content: Text('✅ Password Matched Successfully!')),
+  //     );
+  //   }
+  // }
