@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/componets_influtter/round_button.dart';
+import 'package:flutter_application_1/componets_widgets_in_flutter/round_button.dart';
 
 class Components extends StatefulWidget {
   const Components({super.key});
