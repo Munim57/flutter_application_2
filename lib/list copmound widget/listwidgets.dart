@@ -39,7 +39,7 @@ class ProfileCircle extends StatelessWidget {
 }
 
 /////////////////////////////////////////////////////////
-// ✅ Correct entry point to run the app
+
 void main() {
   runApp(const ProfilesListView());
 }
@@ -61,75 +61,74 @@ class ProfilesListView extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.black,
-          appBar: AppBar(
-            backgroundColor: Colors.blueAccent,
-            title: Center(child: Text('Listwidgets')),
-          ),
-          body: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                // first row
-                SizedBox(
-                  height: 90,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4, // show only first 4 profiles
-                    separatorBuilder: (_, __) => const SizedBox(width: 12),
-                    itemBuilder: (context, index) {
-                      final p = profiles[index];
-                      return ProfileCircle(
-                        imagePath: p['image']!,
-                        name: p['name']!,
-                        role: p['role']!,
-                      );
-                    },
-                  ),
+      home: Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.blueAccent,
+          title: const Center(child: Text('List Widgets')),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // 🔹 First horizontal row
+              SizedBox(
+                height: 100,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  separatorBuilder: (_, __) => const SizedBox(width: 12),
+                  itemBuilder: (context, index) {
+                    final p = profiles[index];
+                    return ProfileCircle(
+                      imagePath: p['image']!,
+                      name: p['name']!,
+                      role: p['role']!,
+                    );
+                  },
                 ),
-                const SizedBox(height: 15),
+              ),
+              const SizedBox(height: 20),
 
-                // second row
-                SizedBox(
-                  height: 90,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: profiles.length - 4 + 1, // +1 for "+77"
-                    separatorBuilder: (_, __) => const SizedBox(width: 12),
-                    itemBuilder: (context, index) {
-                      if (index == profiles.length - 4) {
-                        return Container(
-                          height: 60,
-                          width: 60,
-                          decoration: const BoxDecoration(
-                            color: Color(0xff0D0D2B),
-                            shape: BoxShape.circle,
-                          ),
-                          child: const Center(
-                            child: Text(
-                              '+77',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
+              // 🔹 Second horizontal row
+              SizedBox(
+                height: 100,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: profiles.length - 4 + 1,
+                  separatorBuilder: (_, __) => const SizedBox(width: 12),
+                  itemBuilder: (context, index) {
+                    if (index == profiles.length - 4) {
+                      return Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff0D0D2B),
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            '+77',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                        );
-                      }
-                      final p = profiles[index + 4];
-                      return ProfileCircle(
-                        imagePath: p['image']!,
-                        name: p['name']!,
-                        role: p['role']!,
+                        ),
                       );
-                    },
-                  ),
+                    }
+                    final p = profiles[index + 4];
+                    return ProfileCircle(
+                      imagePath: p['image']!,
+                      name: p['name']!,
+                      role: p['role']!,
+                    );
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
