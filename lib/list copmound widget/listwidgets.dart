@@ -1,231 +1,133 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ProfilesListView(),
-    );
-  }
-}
-
-////////////////////////////////////////////////////////////
-// PROFILE CIRCLE WIDGET
-////////////////////////////////////////////////////////////
-
-class ProfileCircle extends StatelessWidget {
-  final String imagePath;
-  final String name;
-  final String role;
-  final bool micOn;
-  final VoidCallback onMicToggle;
+// ---------------------- PROFILE CIRCLE --------------------------
+class ProfileCircle extends StatefulWidget {
+  final String imagePath; // image path
+  final String name1; // role
+  final String name; // name below the image
+  final double size; // size of the circle
 
   const ProfileCircle({
+    required this.name1,
     required this.imagePath,
     required this.name,
-    required this.role,
-    required this.micOn,
-    required this.onMicToggle,
+    required this.size,
     super.key,
   });
 
   @override
+  State<ProfileCircle> createState() => _ProfileCircleState();
+}
+
+class _ProfileCircleState extends State<ProfileCircle> {
+  bool isMicOn = true;
+
+  @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
       children: [
-        Stack(
-          alignment: Alignment.bottomRight,
+        Container(
+          height: widget.size,
+          width: widget.size,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(
+              image: AssetImage(widget.imagePath),
+              fit: BoxFit.cover,
+              alignment: const Alignment(-1, 0),
+            ),
+          ),
+        ),
+        const SizedBox(height: 2),
+        Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            CircleAvatar(radius: 30, backgroundImage: AssetImage(imagePath)),
             GestureDetector(
-              onTap: onMicToggle,
+              onTap: () {
+                setState(() {
+                  isMicOn = !isMicOn;
+                });
+              },
               child: Icon(
-                Icons.mic,
-                color: micOn ? Colors.blue : Colors.grey,
-                size: 16,
+                isMicOn ? Icons.mic : Icons.mic_off,
+                color: const Color(0xff3626EB),
+                size: 12,
+              ),
+            ),
+            const SizedBox(width: 1.5),
+            Text(
+              widget.name,
+              style: const TextStyle(
+                color: Color(0xffFFFFFF),
+                fontSize: 9.48,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ],
         ),
-        const SizedBox(height: 4),
         Text(
-          name,
+          widget.name1,
           style: const TextStyle(
-            color: Colors.white,
-            fontSize: 12,
+            fontSize: 9.48,
+            color: Color(0xffA5A5A5),
             fontWeight: FontWeight.w500,
           ),
         ),
-        Text(role, style: const TextStyle(color: Colors.grey, fontSize: 10)),
       ],
     );
   }
 }
 
-////////////////////////////////////////////////////////////
-// MAIN SCREEN
-////////////////////////////////////////////////////////////
-
-class ProfilesListView extends StatefulWidget {
-  const ProfilesListView({super.key});
-
-  @override
-  State<ProfilesListView> createState() => _ProfilesListViewState();
+// ---------------------- MAIN APP --------------------------
+void main() {
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ProfilesListView(),
+    ),
+  );
 }
 
-class _ProfilesListViewState extends State<ProfilesListView> {
-  final List<Map<String, String>> profiles = [
-    {'image': 'assets/pic1.jpg', 'name': 'Mentisa', 'role': 'Guest'},
-    {'image': 'assets/pic2.jpg', 'name': 'Alisha', 'role': 'Guest'},
-    {'image': 'assets/pic3.jpg', 'name': 'Hadra', 'role': 'Guest'},
-    {'image': 'assets/pic4.jpg', 'name': 'Furqa', 'role': 'Guest'},
-    {'image': 'assets/pic5.jpg', 'name': 'Ryan', 'role': 'Guest'},
-    {'image': 'assets/pic6.jpg', 'name': 'Raju', 'role': 'Guest'},
-    {'image': 'assets/pic7.jpg', 'name': 'Nukra', 'role': 'Speaker'},
-    {'image': 'assets/pic8.jpg', 'name': 'Aliya', 'role': 'Guest'},
-    {'image': 'assets/pic9.jpg', 'name': 'Sameer', 'role': 'Guest'},
+class ProfilesListView extends StatelessWidget {
+  const ProfilesListView({super.key});
+
+  final List<Map<String, String>> profiles = const [
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
+    {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+    {'image': 'assets/wind.jpg', 'name': 'Alisha', 'role': 'Guest'},
   ];
 
-  late List<bool> micStatus;
-
-  @override
-  void initState() {
-    super.initState();
-    micStatus = List.generate(profiles.length, (_) => true);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
-    // ✅ Dynamically decide how many profiles per row
-    int profilesPerRow = (screenWidth ~/ 90).clamp(3, 6);
-    int firstRowCount = profilesPerRow;
-    int secondRowCount = (profilesPerRow - 1).clamp(
-      2,
-      5,
-    ); // one less in 2nd row
-
-    final firstRow = profiles.take(firstRowCount).toList();
-    final remaining = profiles.skip(firstRowCount).toList();
-    final secondRow = remaining.take(secondRowCount).toList();
-    final extraProfiles = remaining.skip(secondRowCount).toList();
-    final extraCount = extraProfiles.length;
-
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
-        title: const Center(child: Text('Profiles with Mic Control')),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Center(
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: const Color(0xff0D0D2B),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white12),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // ✅ First Row
-                Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  alignment: WrapAlignment.center,
-                  children: firstRow.asMap().entries.map((entry) {
-                    final index = entry.key;
-                    final p = entry.value;
-                    return ProfileCircle(
-                      imagePath: p['image']!,
-                      name: p['name']!,
-                      role: p['role']!,
-                      micOn: micStatus[index],
-                      onMicToggle: () {
-                        setState(() {
-                          micStatus[index] = !micStatus[index];
-                        });
-                      },
-                    );
-                  }).toList(),
-                ),
-
-                const SizedBox(height: 20),
-
-                // ✅ Second Row with +X container
-                Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
-                  alignment: WrapAlignment.center,
-                  children: [
-                    ...secondRow.asMap().entries.map((entry) {
-                      final index = entry.key;
-                      final p = entry.value;
-                      final realIndex = firstRowCount + index;
-                      return ProfileCircle(
-                        imagePath: p['image']!,
-                        name: p['name']!,
-                        role: p['role']!,
-                        micOn: micStatus[realIndex],
-                        onMicToggle: () {
-                          setState(() {
-                            micStatus[realIndex] = !micStatus[realIndex];
-                          });
-                        },
-                      );
-                    }),
-                    if (extraCount > 0)
-                      GestureDetector(
-                        onTap: () {
-                          _showProfilesDialog(context, extraProfiles);
-                        },
-                        child: Container(
-                          height: 60,
-                          width: 60,
-                          decoration: const BoxDecoration(
-                            color: Colors.blueAccent,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Text(
-                              '+$extraCount',
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  ////////////////////////////////////////////////////////////
-  // DIALOG FUNCTION
-  ////////////////////////////////////////////////////////////
   void _showProfilesDialog(
     BuildContext context,
-    List<Map<String, String>> extraProfiles,
+    List<Map<String, String>> extras,
   ) {
     showGeneralDialog(
       context: context,
@@ -247,42 +149,130 @@ class _ProfilesListViewState extends State<ProfilesListView> {
               ),
             ),
           ),
-          content: SizedBox(
-            width: double.maxFinite,
-            height: 350,
-            child: ListView.separated(
-              itemCount: extraProfiles.length,
-              separatorBuilder: (_, __) => const Divider(color: Colors.white24),
-              itemBuilder: (context, i) {
-                final realIndex = i;
-                final p = extraProfiles[i];
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: AssetImage(p['image']!),
-                  ),
-                  title: Text(
-                    p['name']!,
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    p['role']!,
-                    style: const TextStyle(color: Colors.grey),
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(
-                      Icons.mic,
-                      color: micStatus[realIndex] ? Colors.blue : Colors.grey,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        micStatus[realIndex] = !micStatus[realIndex];
-                      });
-                    },
-                  ),
-                );
-              },
+          content: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxHeight: 400, // limits dialog height
+              minHeight: 100,
+            ),
+            child: Scrollbar(
+              thumbVisibility: true,
+              thickness: 3,
+              radius: const Radius.circular(10),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: extras.map((p) {
+                    return Column(
+                      children: [
+                        ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage(p['image']!),
+                          ),
+                          title: Text(
+                            p['name']!,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          subtitle: Text(
+                            p['role']!,
+                            style: const TextStyle(color: Colors.grey),
+                          ),
+                        ),
+                        const Divider(color: Colors.white24),
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final firstRow = profiles.take(6).toList();
+    final remaining = profiles.skip(6).toList();
+    final secondRow = remaining.take(5).toList();
+    final extraProfiles = remaining.skip(5).toList();
+    final extraCount = extraProfiles.length;
+
+    return Scaffold(
+      backgroundColor: Colors.black,
+      appBar: AppBar(
+        title: const Text('Profile Grid Example'),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // 🔹 First Row
+            SizedBox(
+              height: 100,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: firstRow.length,
+                separatorBuilder: (_, __) => const SizedBox(width: 10),
+                itemBuilder: (context, index) {
+                  final p = firstRow[index];
+                  return ProfileCircle(
+                    imagePath: p['image']!,
+                    name: p['name']!,
+                    name1: p['role']!,
+                    size: 60,
+                  );
+                },
+              ),
+            ),
+            const SizedBox(height: 25),
+
+            // 🔹 Second Row
+            SizedBox(
+              height: 100,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: secondRow.length + (extraCount > 0 ? 1 : 0),
+                separatorBuilder: (_, __) => const SizedBox(width: 10),
+                itemBuilder: (context, index) {
+                  if (index < secondRow.length) {
+                    final p = secondRow[index];
+                    return ProfileCircle(
+                      imagePath: p['image']!,
+                      name: p['name']!,
+                      name1: p['role']!,
+                      size: 60,
+                    );
+                  } else {
+                    // "+X" Container for remaining profiles
+                    return GestureDetector(
+                      onTap: () => _showProfilesDialog(context, extraProfiles),
+                      child: Container(
+                        height: 60,
+                        width: 60,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff0D0D2B),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Text(
+                            '+$extraCount',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -290,8 +280,7 @@ class _ProfilesListViewState extends State<ProfilesListView> {
 }
 
 
-
-///////////////////////////////////////////
+// /////////////////////////////////////////
 
 // import 'dart:ui';
 // import 'package:flutter/material.dart';
@@ -360,7 +349,7 @@ class _ProfilesListViewState extends State<ProfilesListView> {
 
 // class _ProfilesListViewState extends State<ProfilesListView> {
 //   final List<Map<String, String>> profiles = [
-//     {'image': 'assets/pic1.jpg', 'name': 'Mentisa', 'role': 'Guest'},
+//     {'image': 'assets/spider.jpg', 'name': 'Mentisa', 'role': 'Guest'},
 //     {'image': 'assets/pic2.jpg', 'name': 'Alisha', 'role': 'Guest'},
 //     {'image': 'assets/pic3.jpg', 'name': 'Hadra', 'role': 'Guest'},
 //     {'image': 'assets/pic4.jpg', 'name': 'Furqa', 'role': 'Guest'},
