@@ -74,7 +74,6 @@ class _ValidationformState extends State<Validationform> {
     }
     return null;
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

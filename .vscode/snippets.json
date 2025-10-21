@@ -1,0 +1,19 @@
+[
+    {
+        "id": "ee1a3cf92f3ee17974f62d4a34294cf5",
+        "description": "for other files usecase",
+        "body": "   SizedBox(height: 20),\r\n                ElevatedButton(\r\n                  onPressed: _sginupForm,\r\n                  style: ElevatedButton.styleFrom(\r\n                    backgroundColor: Colors.blue,\r\n                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 40),\r\n                    shape: RoundedRectangleBorder(\r\n                      borderRadius: BorderRadius.circular(10),\r\n                    ),\r\n                  ),",
+        "notes": "",
+        "source": "e:\\projects\\flutter_application_1\\lib\\validation_form_flutter\\Validation.dart",
+        "range": {
+            "start": {
+                "line": 249,
+                "character": 13
+            },
+            "end": {
+                "line": 258,
+                "character": 20
+            }
+        }
+    }
+]

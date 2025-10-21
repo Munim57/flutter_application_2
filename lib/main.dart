@@ -1,17 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Flutter_Demo_practice/Screen_Last.dart';
-import 'package:flutter_application_1/Flutter_Demo_practice/Screen_three.dart';
-import 'package:flutter_application_1/Flutter_Demo_practice/home_screen.dart';
-import 'package:flutter_application_1/Flutter_Demo_practice/screen_two.dart';
-import 'package:flutter_application_1/componets_widgets_in_flutter/components.dart';
-import 'package:flutter_application_1/list%20copmound%20widget/container_compunt.dart';
-
-import 'package:flutter_application_1/lottery_app/LotteryApp.dart';
-import 'package:flutter_application_1/validation_form_flutter/Validation.dart';
-import 'package:flutter_application_1/widgets_influtter/Widgets.dart';
-
-import 'package:flutter_application_1/Practice_flutter/praxtice.dart';
-import 'package:flutter_application_1/press_button/pressbutton.dart';
+import 'package:flutter_application_1/navigator_bottom_bar/navigator_bottom.dart';
 
 void main() {
   runApp(start());
@@ -27,7 +15,7 @@ class start extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      initialRoute: HomeScreen.id,
+      // initialRoute: HomeScreen.id,
 
       // routes: {
       //   HomeScreen.id: (context) => HomeScreen(),
@@ -38,6 +26,7 @@ class start extends StatelessWidget {
       // home: Validationform(),
       // home: squre(),
       // home: HomeScreen(),
+      home: NavigatorBottom(),
     );
   }
 }
