@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/navigator_bottom_bar/navigator_bottom.dart';
+
+import 'package:flutter_application_1/videos_uploading/videos_screen.dart';
 
 void main() {
   runApp(start());
@@ -26,7 +27,8 @@ class start extends StatelessWidget {
       // home: Validationform(),
       // home: squre(),
       // home: HomeScreen(),
-      home: NavigatorBottom(),
+      // home: NavigatorBottom(),
+      home: VideosScreen(),
     );
   }
 }
